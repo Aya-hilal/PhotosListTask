@@ -23,6 +23,9 @@
 		858F94752780C8BA00D2D3B1 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F94742780C8BA00D2D3B1 /* AppConfiguration.swift */; };
 		858F947A2780CA6800D2D3B1 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F94792780CA6800D2D3B1 /* Observable.swift */; };
 		858F947D2780CAB600D2D3B1 /* NetworkConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F947C2780CAB600D2D3B1 /* NetworkConnectionManager.swift */; };
+		858F94832780CB5900D2D3B1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F94822780CB5900D2D3B1 /* BaseViewController.swift */; };
+		858F94852780CB6200D2D3B1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F94842780CB6200D2D3B1 /* BaseViewModel.swift */; };
+		858F94872780CB8600D2D3B1 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F94862780CB8600D2D3B1 /* BaseNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		858F94742780C8BA00D2D3B1 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		858F94792780CA6800D2D3B1 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		858F947C2780CAB600D2D3B1 /* NetworkConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectionManager.swift; sourceTree = "<group>"; };
+		858F94822780CB5900D2D3B1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		858F94842780CB6200D2D3B1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		858F94862780CB8600D2D3B1 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		EA44035AB8C601E28C239787 /* Pods_PhotosListTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosListTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB1712681F3B30F40E919C5 /* Pods-PhotosListTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosListTaskTests.release.xcconfig"; path = "Target Support Files/Pods-PhotosListTaskTests/Pods-PhotosListTaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		EEFE3E03B323B49C3BF0EA3F /* Pods_PhotosListTask_PhotosListTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosListTask_PhotosListTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +153,7 @@
 		858F943F2780C6E000D2D3B1 /* PhotosListTask */ = {
 			isa = PBXGroup;
 			children = (
+				858F94802780CB3700D2D3B1 /* Modules */,
 				858F94782780C97500D2D3B1 /* Resources */,
 				858F94762780C90E00D2D3B1 /* Globals */,
 				858F94732780C89200D2D3B1 /* Application */,
@@ -209,6 +216,24 @@
 				858F947C2780CAB600D2D3B1 /* NetworkConnectionManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		858F94802780CB3700D2D3B1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				858F94812780CB4600D2D3B1 /* Base */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		858F94812780CB4600D2D3B1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				858F94822780CB5900D2D3B1 /* BaseViewController.swift */,
+				858F94842780CB6200D2D3B1 /* BaseViewModel.swift */,
+				858F94862780CB8600D2D3B1 /* BaseNavigationController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,7 +480,10 @@
 				858F94412780C6E000D2D3B1 /* AppDelegate.swift in Sources */,
 				858F947D2780CAB600D2D3B1 /* NetworkConnectionManager.swift in Sources */,
 				858F94432780C6E000D2D3B1 /* SceneDelegate.swift in Sources */,
+				858F94852780CB6200D2D3B1 /* BaseViewModel.swift in Sources */,
+				858F94832780CB5900D2D3B1 /* BaseViewController.swift in Sources */,
 				858F947A2780CA6800D2D3B1 /* Observable.swift in Sources */,
+				858F94872780CB8600D2D3B1 /* BaseNavigationController.swift in Sources */,
 				858F944B2780C6E000D2D3B1 /* PhotosListTask.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,7 +666,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MSRA36Q647;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PhotosListTask/Info.plist;
+				INFOPLIST_FILE = PhotosListTask/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -667,7 +695,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = MSRA36Q647;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PhotosListTask/Info.plist;
+				INFOPLIST_FILE = PhotosListTask/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
