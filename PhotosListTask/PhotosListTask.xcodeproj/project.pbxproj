@@ -143,12 +143,12 @@
 		858F943F2780C6E000D2D3B1 /* PhotosListTask */ = {
 			isa = PBXGroup;
 			children = (
+				858F94782780C97500D2D3B1 /* Resources */,
+				858F94762780C90E00D2D3B1 /* Globals */,
 				858F94732780C89200D2D3B1 /* Application */,
 				858F94442780C6E000D2D3B1 /* ViewController.swift */,
 				858F94462780C6E000D2D3B1 /* Main.storyboard */,
-				858F944C2780C6E200D2D3B1 /* Assets.xcassets */,
 				858F944E2780C6E200D2D3B1 /* LaunchScreen.storyboard */,
-				858F94512780C6E200D2D3B1 /* Info.plist */,
 				858F94492780C6E000D2D3B1 /* PhotosListTask.xcdatamodeld */,
 			);
 			path = PhotosListTask;
@@ -179,6 +179,22 @@
 				858F94742780C8BA00D2D3B1 /* AppConfiguration.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		858F94762780C90E00D2D3B1 /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
+		858F94782780C97500D2D3B1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				858F944C2780C6E200D2D3B1 /* Assets.xcassets */,
+				858F94512780C6E200D2D3B1 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
