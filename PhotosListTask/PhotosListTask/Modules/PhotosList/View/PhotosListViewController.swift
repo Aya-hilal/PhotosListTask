@@ -8,13 +8,14 @@
 import Foundation
 import UIKit
 
-final class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
+class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     
     //MARK: - Propertires
     private var viewModel: PhotosListViewModel!
-    
+    private var dataSource: PhotosListDataSource!
+
+    //MARK: - Navigation
     static let storyboardName: String = "PhotosList"
-    
     static func create() -> BaseViewController {
         let moviesListView = PhotosListViewController.instantiate(storyboardName: storyboardName)
         let viewModel = PhotosListViewModel()
@@ -22,10 +23,16 @@ final class PhotosListViewController: BaseViewController, Alertable, Storyboarde
         return moviesListView
     }
     
+    //MARK: - IBOutlet and IBActions
+    
+    @IBOutlet weak var photosTableView: UITableView!
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.getPhotosList()
+        setupDataSource()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +44,12 @@ final class PhotosListViewController: BaseViewController, Alertable, Storyboarde
     }
     
     // MARK: - Private Methods
+    private func setupDataSource() {
+       dataSource = PhotosListDataSource(tableView: photosTableView, viewController: self, onItemSelected: onPhotoItemSelected)
+    }
     
-    
-    
+    private func onPhotoItemSelected(photo: Photo?) {
+        
+    }
+
 }

@@ -8,5 +8,7 @@
 import Foundation
 
 class PhotosListViewModel: BaseViewModel {
-    
+    func getPhotosList() {
+        
+    }
 }
