@@ -13,13 +13,9 @@ protocol BaseRouter: URLRequestConvertible {
     var path          : String { get }
     var extraHeaders  : [String : String] { get }
     var parameters    : Parameters? { get }
-    var authorized: Bool { get }
 }
 
 extension BaseRouter {
-    var authorized: Bool {
-      return true
-    }
     
     var extraHeaders: [String : String] {
         return [:]
