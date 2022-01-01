@@ -33,6 +33,7 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
         super.viewDidLoad()
         viewModel.getPhotosList()
         setupDataSource()
+        observeToViewModelChanges()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +51,12 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     
     private func onPhotoItemSelected(photo: Photo?) {
         
+    }
+    
+    private func observeToViewModelChanges() {
+        viewModel.photosList.observe(on: self) { photos in
+            self.dataSource.bindPhotosList(photos ?? [])
+        }
     }
 
 }

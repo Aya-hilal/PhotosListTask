@@ -21,7 +21,8 @@ class PhotoCell: UITableViewCell {
     //MARK: - Methods
     func bindCell(photo: Photo) {
         authorNameLabel.text = photo.author
-        let photoImageUrl = URL(string: photo.url)
+        let photoImageUrl = URL(string: photo.downloadUrl)
+        print("photo url \(photoImageUrl)")
         photoImageView.kf.setImage(with: photoImageUrl)
     }
     

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ApiBaseURL</key>
-	<string>https://picsum.photos/v2/</string>
+	<string>https://picsum.photos/v2</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
