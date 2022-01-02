@@ -8,6 +8,7 @@ target 'PhotosListTask' do
   pod 'Kingfisher', '6.3.1'
   pod 'SwiftLint', '0.43.1'
   pod "TTGSnackbar", "1.10.5"
+  pod 'SkeletonView'
 
   # Pods for PhotosListTask
 

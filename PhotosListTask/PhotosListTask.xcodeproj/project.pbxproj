@@ -47,6 +47,8 @@
 		858F94C52780E80D00D2D3B1 /* PhotosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F94C42780E80D00D2D3B1 /* PhotosAPI.swift */; };
 		858F94C72780E8AC00D2D3B1 /* PhotosRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F94C62780E8AC00D2D3B1 /* PhotosRouter.swift */; };
 		858F94C92780EAC400D2D3B1 /* BaseReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F94C82780EAC400D2D3B1 /* BaseReponse.swift */; };
+		85945B9A278265D200E81E30 /* SkeletonPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85945B99278265D200E81E30 /* SkeletonPhotoCell.swift */; };
+		85945B9C278265E000E81E30 /* SkeletonPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85945B9B278265E000E81E30 /* SkeletonPhotoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,8 @@
 		858F94C42780E80D00D2D3B1 /* PhotosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPI.swift; sourceTree = "<group>"; };
 		858F94C62780E8AC00D2D3B1 /* PhotosRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRouter.swift; sourceTree = "<group>"; };
 		858F94C82780EAC400D2D3B1 /* BaseReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseReponse.swift; sourceTree = "<group>"; };
+		85945B99278265D200E81E30 /* SkeletonPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonPhotoCell.swift; sourceTree = "<group>"; };
+		85945B9B278265E000E81E30 /* SkeletonPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkeletonPhotoCell.xib; sourceTree = "<group>"; };
 		EA44035AB8C601E28C239787 /* Pods_PhotosListTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosListTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB1712681F3B30F40E919C5 /* Pods-PhotosListTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosListTaskTests.release.xcconfig"; path = "Target Support Files/Pods-PhotosListTaskTests/Pods-PhotosListTaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		EEFE3E03B323B49C3BF0EA3F /* Pods_PhotosListTask_PhotosListTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosListTask_PhotosListTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -381,6 +385,7 @@
 		858F94BA2780DCF800D2D3B1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				85945B98278265BF00E81E30 /* SkeletonPhotoCell */,
 				858F94BB2780DD0900D2D3B1 /* PhotoCell */,
 			);
 			path = Cells;
@@ -393,6 +398,15 @@
 				858F94BE2780DD3D00D2D3B1 /* PhotoCell.xib */,
 			);
 			path = PhotoCell;
+			sourceTree = "<group>";
+		};
+		85945B98278265BF00E81E30 /* SkeletonPhotoCell */ = {
+			isa = PBXGroup;
+			children = (
+				85945B99278265D200E81E30 /* SkeletonPhotoCell.swift */,
+				85945B9B278265E000E81E30 /* SkeletonPhotoCell.xib */,
+			);
+			path = SkeletonPhotoCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				858F94502780C6E200D2D3B1 /* LaunchScreen.storyboard in Resources */,
+				85945B9C278265E000E81E30 /* SkeletonPhotoCell.xib in Resources */,
 				858F94AC2780D62000D2D3B1 /* PhotosList.storyboard in Resources */,
 				858F944D2780C6E200D2D3B1 /* Assets.xcassets in Resources */,
 				858F94482780C6E000D2D3B1 /* Main.storyboard in Resources */,
@@ -639,6 +654,7 @@
 				858F94892780CD0600D2D3B1 /* NavigationManager.swift in Sources */,
 				858F94B32780DA7600D2D3B1 /* PhotosListDataSource.swift in Sources */,
 				858F94452780C6E000D2D3B1 /* ViewController.swift in Sources */,
+				85945B9A278265D200E81E30 /* SkeletonPhotoCell.swift in Sources */,
 				858F948C2780CD8D00D2D3B1 /* UIViewController.swift in Sources */,
 				858F94C52780E80D00D2D3B1 /* PhotosAPI.swift in Sources */,
 				858F94982780CE9600D2D3B1 /* Colors.swift in Sources */,

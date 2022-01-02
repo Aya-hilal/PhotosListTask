@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PhotoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eae-Lh-Le0" customClass="SkeletonPhotoCell" customModule="PhotosListTask" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eae-Lh-Le0" id="qmL-a4-hWA">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4P1-tB-3gC">
+                        <rect key="frame" x="10" y="10" width="394" height="280"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xfb-Ni-B5O">
+                                <rect key="frame" x="0.0" y="0.0" width="394" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ccj-7o-wRG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xv3-nH-1By">
+                                <rect key="frame" x="0.0" y="215" width="394" height="49.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNa-PT-WCS">
+                                <rect key="frame" x="0.0" y="279.5" width="394" height="0.5"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="liX-E7-yDN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="QNa-PT-WCS" firstAttribute="leading" secondItem="4P1-tB-3gC" secondAttribute="leading" id="9a8-Dr-6bi"/>
+                            <constraint firstAttribute="trailing" secondItem="xv3-nH-1By" secondAttribute="trailing" id="JYZ-dI-Ika"/>
+                            <constraint firstItem="xfb-Ni-B5O" firstAttribute="leading" secondItem="4P1-tB-3gC" secondAttribute="leading" id="Rkx-T0-PrV"/>
+                            <constraint firstItem="xv3-nH-1By" firstAttribute="leading" secondItem="4P1-tB-3gC" secondAttribute="leading" id="p0i-Dw-bmc"/>
+                            <constraint firstAttribute="trailing" secondItem="QNa-PT-WCS" secondAttribute="trailing" id="rGJ-vi-2Pf"/>
+                            <constraint firstAttribute="trailing" secondItem="xfb-Ni-B5O" secondAttribute="trailing" id="xp2-gz-Khb"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="4P1-tB-3gC" secondAttribute="trailing" constant="10" id="29W-3g-OMj"/>
+                    <constraint firstItem="4P1-tB-3gC" firstAttribute="leading" secondItem="qmL-a4-hWA" secondAttribute="leading" constant="10" id="LOM-yC-qtx"/>
+                    <constraint firstAttribute="bottom" secondItem="4P1-tB-3gC" secondAttribute="bottom" constant="10" id="THR-W9-eAn"/>
+                    <constraint firstItem="4P1-tB-3gC" firstAttribute="top" secondItem="qmL-a4-hWA" secondAttribute="top" constant="10" id="aMu-7d-Bcb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="skeletonImageView" destination="xfb-Ni-B5O" id="lDY-ng-AIV"/>
+                <outlet property="skeletonLabel" destination="xv3-nH-1By" id="tHZ-Vx-UlK"/>
+            </connections>
+            <point key="canvasLocation" x="525" y="35"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

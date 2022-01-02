@@ -31,13 +31,14 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.startFetchingPhotosList()
         setupDataSource()
+        fetchPhotosRemotly()
         observeToViewModelChanges()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupNavigationBar()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -45,6 +46,17 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     }
     
     // MARK: - Private Methods
+    
+    private func fetchPhotosRemotly() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.viewModel.startFetchingPhotosList()
+        }
+    }
+    
+    private func setupNavigationBar() {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     private func setupDataSource() {
        dataSource = PhotosListDataSource(tableView: photosTableView, viewController: self, onItemSelected: onPhotoItemSelected, onLoadMorePhotos: onLoadMorePhotos)
     }
@@ -54,7 +66,10 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     }
     
     private func onLoadMorePhotos() {
-        viewModel.loadMorePhotos()
+        dataSource.displaySkeletonView()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.viewModel.loadMorePhotos()
+        }
     }
     
     private func observeToViewModelChanges() {
