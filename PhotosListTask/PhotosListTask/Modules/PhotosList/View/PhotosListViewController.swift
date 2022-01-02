@@ -31,7 +31,7 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getPhotosList()
+        viewModel.startFetchingPhotosList()
         setupDataSource()
         observeToViewModelChanges()
     }
@@ -46,16 +46,23 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     
     // MARK: - Private Methods
     private func setupDataSource() {
-       dataSource = PhotosListDataSource(tableView: photosTableView, viewController: self, onItemSelected: onPhotoItemSelected)
+       dataSource = PhotosListDataSource(tableView: photosTableView, viewController: self, onItemSelected: onPhotoItemSelected, onLoadMorePhotos: onLoadMorePhotos)
     }
     
     private func onPhotoItemSelected(photo: Photo?) {
         
     }
     
+    private func onLoadMorePhotos() {
+        viewModel.loadMorePhotos()
+    }
+    
     private func observeToViewModelChanges() {
         viewModel.photosList.observe(on: self) { photos in
-            self.dataSource.bindPhotosList(photos ?? [])
+            if photos?.isEmpty ?? true {
+                return
+            }
+            self.dataSource.updatePhotosList(photos ?? [], fromPagination: self.viewModel.getFromPagination(), canFetchMorePhotos: self.viewModel.getCanFetchMorePhotos())
         }
     }
 
