@@ -77,8 +77,20 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
             if photos?.isEmpty ?? true {
                 return
             }
-            self.dataSource.updatePhotosList(photos ?? [], fromPagination: self.viewModel.getFromPagination(), canFetchMorePhotos: self.viewModel.getCanFetchMorePhotos())
+            let photoWithAdsList = self.getPhotosWithAdsList(photos: photos ?? [])
+            self.dataSource.updatePhotosList(photoWithAdsList, fromPagination: self.viewModel.getFromPagination(), canFetchMorePhotos: self.viewModel.getCanFetchMorePhotos())
         }
+    }
+    
+    private func getPhotosWithAdsList(photos: [Photo]) -> [Photo] {
+        var result: [Photo] = []
+        for index in 0..<(photos.count) {
+            result.append(photos[index])
+           if (index+1) % 5 == 0 {
+               result.append(Photo(type: .ad))
+           }
+        }
+        return result
     }
 
 }

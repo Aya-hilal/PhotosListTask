@@ -35,11 +35,14 @@ class PhotosListDataSource: NSObject {
 
         let photoCell = UINib(nibName: PhotoCell.ID, bundle: nil)
         let skeletonPhotoCell = UINib(nibName: SkeletonPhotoCell.ID, bundle: nil)
+        let adCell = UINib(nibName: AdCell.ID, bundle: nil)
 
         tableView.register(photoCell,
                            forCellReuseIdentifier: PhotoCell.ID)
         tableView.register(skeletonPhotoCell,
                            forCellReuseIdentifier: SkeletonPhotoCell.ID)
+        tableView.register(adCell,
+                           forCellReuseIdentifier: AdCell.ID)
         tableView.reloadData()
     }
     
@@ -76,7 +79,11 @@ extension PhotosListDataSource: UITableViewDelegate, UITableViewDataSource {
         if photosList.isEmpty || (!photosList.isEmpty && currentlyLoadMorePhotos && indexPath.row >= photosList.count){
             return instantiateSkeletonPhotoCell()
         }
-        return instantiatePhotoCell(photo: photosList[indexPath.row])
+        if photosList[indexPath.row].type == .ad {
+            return instantiateAdCell()
+        } else{
+            return instantiatePhotoCell(photo: photosList[indexPath.row])
+        }
         
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -87,6 +94,10 @@ extension PhotosListDataSource: UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        onPhotoItemSelected(photosList[indexPath.row])
     }
     
     
@@ -105,7 +116,10 @@ extension PhotosListDataSource: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onPhotoItemSelected(photosList[indexPath.row])
+    private func instantiateAdCell() -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AdCell.ID) as? AdCell else {
+            return UITableViewCell()
+        }
+        return cell
     }
 }

@@ -49,6 +49,9 @@
 		858F94C92780EAC400D2D3B1 /* BaseReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F94C82780EAC400D2D3B1 /* BaseReponse.swift */; };
 		85945B9A278265D200E81E30 /* SkeletonPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85945B99278265D200E81E30 /* SkeletonPhotoCell.swift */; };
 		85945B9C278265E000E81E30 /* SkeletonPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85945B9B278265E000E81E30 /* SkeletonPhotoCell.xib */; };
+		85945B9F27826C6000E81E30 /* AdCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85945B9E27826C6000E81E30 /* AdCell.xib */; };
+		85945BA127826C6900E81E30 /* AdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85945BA027826C6900E81E30 /* AdCell.swift */; };
+		85945BA32782740500E81E30 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85945BA22782740500E81E30 /* Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +121,9 @@
 		858F94C82780EAC400D2D3B1 /* BaseReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseReponse.swift; sourceTree = "<group>"; };
 		85945B99278265D200E81E30 /* SkeletonPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonPhotoCell.swift; sourceTree = "<group>"; };
 		85945B9B278265E000E81E30 /* SkeletonPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkeletonPhotoCell.xib; sourceTree = "<group>"; };
+		85945B9E27826C6000E81E30 /* AdCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdCell.xib; sourceTree = "<group>"; };
+		85945BA027826C6900E81E30 /* AdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCell.swift; sourceTree = "<group>"; };
+		85945BA22782740500E81E30 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		EA44035AB8C601E28C239787 /* Pods_PhotosListTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosListTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB1712681F3B30F40E919C5 /* Pods-PhotosListTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosListTaskTests.release.xcconfig"; path = "Target Support Files/Pods-PhotosListTaskTests/Pods-PhotosListTaskTests.release.xcconfig"; sourceTree = "<group>"; };
 		EEFE3E03B323B49C3BF0EA3F /* Pods_PhotosListTask_PhotosListTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotosListTask_PhotosListTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				858F948B2780CD8D00D2D3B1 /* UIViewController.swift */,
+				85945BA22782740500E81E30 /* Array.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -385,6 +392,7 @@
 		858F94BA2780DCF800D2D3B1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				85945B9D27826C5300E81E30 /* AdCell */,
 				85945B98278265BF00E81E30 /* SkeletonPhotoCell */,
 				858F94BB2780DD0900D2D3B1 /* PhotoCell */,
 			);
@@ -407,6 +415,15 @@
 				85945B9B278265E000E81E30 /* SkeletonPhotoCell.xib */,
 			);
 			path = SkeletonPhotoCell;
+			sourceTree = "<group>";
+		};
+		85945B9D27826C5300E81E30 /* AdCell */ = {
+			isa = PBXGroup;
+			children = (
+				85945B9E27826C6000E81E30 /* AdCell.xib */,
+				85945BA027826C6900E81E30 /* AdCell.swift */,
+			);
+			path = AdCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,6 +540,7 @@
 				858F94AC2780D62000D2D3B1 /* PhotosList.storyboard in Resources */,
 				858F944D2780C6E200D2D3B1 /* Assets.xcassets in Resources */,
 				858F94482780C6E000D2D3B1 /* Main.storyboard in Resources */,
+				85945B9F27826C6000E81E30 /* AdCell.xib in Resources */,
 				858F94BF2780DD3D00D2D3B1 /* PhotoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,6 +674,7 @@
 				858F94452780C6E000D2D3B1 /* ViewController.swift in Sources */,
 				85945B9A278265D200E81E30 /* SkeletonPhotoCell.swift in Sources */,
 				858F948C2780CD8D00D2D3B1 /* UIViewController.swift in Sources */,
+				85945BA32782740500E81E30 /* Array.swift in Sources */,
 				858F94C52780E80D00D2D3B1 /* PhotosAPI.swift in Sources */,
 				858F94982780CE9600D2D3B1 /* Colors.swift in Sources */,
 				858F94752780C8BA00D2D3B1 /* AppConfiguration.swift in Sources */,
@@ -680,6 +699,7 @@
 				858F947A2780CA6800D2D3B1 /* Observable.swift in Sources */,
 				858F94C92780EAC400D2D3B1 /* BaseReponse.swift in Sources */,
 				858F94872780CB8600D2D3B1 /* BaseNavigationController.swift in Sources */,
+				85945BA127826C6900E81E30 /* AdCell.swift in Sources */,
 				858F944B2780C6E000D2D3B1 /* PhotosListTask.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

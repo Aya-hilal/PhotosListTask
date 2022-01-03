@@ -6,7 +6,8 @@
 //
 
 import Foundation
+import UIKit
 
 struct Images {
-    
+  static let adPlaceholder = UIImage(named: "AdPlaceholder")
 }
