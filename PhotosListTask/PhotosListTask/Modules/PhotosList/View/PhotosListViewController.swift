@@ -17,10 +17,10 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     //MARK: - Navigation
     static let storyboardName: String = "PhotosList"
     static func create() -> BaseViewController {
-        let moviesListView = PhotosListViewController.instantiate(storyboardName: storyboardName)
+        let photosListView = PhotosListViewController.instantiate(storyboardName: storyboardName)
         let viewModel = PhotosListViewModel()
-        moviesListView.viewModel = viewModel
-        return moviesListView
+        photosListView.viewModel = viewModel
+        return photosListView
     }
     
     //MARK: - IBOutlet and IBActions
@@ -58,13 +58,17 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     }
     
     private func setupDataSource() {
-       dataSource = PhotosListDataSource(tableView: photosTableView, viewController: self, onItemSelected: onPhotoItemSelected, onLoadMorePhotos: onLoadMorePhotos)
+        dataSource = PhotosListDataSource(tableView: photosTableView, viewController: self, onItemSelected: onPhotoItemSelected, onLoadMorePhotos: onLoadMorePhotos, onAllItemSelected: onItemSelected)
     }
     
     private func onPhotoItemSelected(photo: Photo?, image: UIImage?) {
         if photo?.downloadUrl != "" && image != nil {
             openImageInFullScreen(image: image!)
         }
+    }
+    
+    private func onItemSelected(photo: Photo?) {
+      print("onItemSelected")
     }
     
     private func openImageInFullScreen(image: UIImage) {

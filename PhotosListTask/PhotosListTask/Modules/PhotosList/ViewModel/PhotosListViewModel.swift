@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PhotosListViewModel: BaseViewModel, ObservableObject {
+class PhotosListViewModel: BaseViewModel {
     var photosList: Observable<[Photo]?> = Observable(nil)
     let limit = 10
     private var pageNumber = 1
