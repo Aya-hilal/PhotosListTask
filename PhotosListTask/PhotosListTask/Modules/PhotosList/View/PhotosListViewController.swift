@@ -61,10 +61,25 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
        dataSource = PhotosListDataSource(tableView: photosTableView, viewController: self, onItemSelected: onPhotoItemSelected, onLoadMorePhotos: onLoadMorePhotos)
     }
     
-    private func onPhotoItemSelected(photo: Photo?) {
-        
+    private func onPhotoItemSelected(photo: Photo?, image: UIImage?) {
+        if photo?.downloadUrl != "" && image != nil {
+            openImageInFullScreen(image: image!)
+        }
     }
     
+    private func openImageInFullScreen(image: UIImage) {
+           let newImageView = UIImageView(image: image)
+           newImageView.frame = UIScreen.main.bounds
+           newImageView.backgroundColor = .black
+           newImageView.contentMode = .scaleAspectFit
+           newImageView.isUserInteractionEnabled = true
+           let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+           newImageView.addGestureRecognizer(tap)
+           self.view.addSubview(newImageView)
+    }
+    @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
+        sender.view?.removeFromSuperview()
+    }
     private func onLoadMorePhotos() {
         dataSource.displaySkeletonView()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

@@ -12,13 +12,13 @@ class PhotosListDataSource: NSObject {
     
     private var tableView: UITableView!
     private var viewController: BaseViewController!
-    private var onPhotoItemSelected: ((Photo?) -> Void)!
+    private var onPhotoItemSelected: ((Photo?, UIImage?) -> Void)!
     private var onLoadMorePhotos: (() -> Void)!
     private var photosList: [Photo] = []
     private var canFetchMorePhotos: Bool = true
     private var currentlyLoadMorePhotos: Bool = false
     
-    init(tableView: UITableView, viewController: BaseViewController, onItemSelected: @escaping ((_:Photo?) -> Void), onLoadMorePhotos: @escaping (() -> Void)) {
+    init(tableView: UITableView, viewController: BaseViewController, onItemSelected: @escaping ((_:Photo?, UIImage?) -> Void), onLoadMorePhotos: @escaping (() -> Void)) {
         super.init()
         self.tableView = tableView
         self.viewController = viewController
@@ -97,7 +97,7 @@ extension PhotosListDataSource: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        onPhotoItemSelected(photosList[indexPath.row])
+        onPhotoItemSelected(photosList[indexPath.row], (tableView.cellForRow(at: indexPath) as? PhotoCell)?.photoImageView.image)
     }
     
     
