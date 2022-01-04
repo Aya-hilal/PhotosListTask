@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -32,20 +31,11 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LAo-C8-H7T">
-                                <rect key="frame" x="0.0" y="115" width="475" height="0.5"/>
-                                <color key="backgroundColor" systemColor="separatorColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="0.5" id="OAF-tX-bae"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="1fc-DI-7gk" firstAttribute="leading" secondItem="8aF-la-IFc" secondAttribute="leading" id="2on-9i-CgF"/>
-                            <constraint firstItem="LAo-C8-H7T" firstAttribute="leading" secondItem="8aF-la-IFc" secondAttribute="leading" id="6Mt-ZG-Ta5"/>
                             <constraint firstAttribute="height" constant="115.5" id="IcS-So-qqs"/>
                             <constraint firstAttribute="trailing" secondItem="1fc-DI-7gk" secondAttribute="trailing" id="wey-ga-78j"/>
-                            <constraint firstAttribute="trailing" secondItem="LAo-C8-H7T" secondAttribute="trailing" id="xMT-1a-EIr"/>
                         </constraints>
                     </stackView>
                 </subviews>
@@ -63,8 +53,5 @@
     </objects>
     <resources>
         <image name="AdPlaceholder" width="600" height="149"/>
-        <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
