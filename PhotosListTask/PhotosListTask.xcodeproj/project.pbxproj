@@ -11,6 +11,8 @@
 		29BF0E2409CFFF1744937695 /* Pods_PhotosListTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE5D46C169163A063AA89F2 /* Pods_PhotosListTask.framework */; };
 		366C125719ABBFFDC374D6A7 /* Pods_PhotosListTask_PhotosListTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEFE3E03B323B49C3BF0EA3F /* Pods_PhotosListTask_PhotosListTaskUITests.framework */; };
 		858F3F942783C32D00142F01 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F3F932783C32D00142F01 /* UIImage.swift */; };
+		858F3F972783D14500142F01 /* PersistDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F3F962783D14500142F01 /* PersistDataManager.swift */; };
+		858F3F992783D18E00142F01 /* RealmPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F3F982783D18E00142F01 /* RealmPhoto.swift */; };
 		858F94412780C6E000D2D3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F94402780C6E000D2D3B1 /* AppDelegate.swift */; };
 		858F94432780C6E000D2D3B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F94422780C6E000D2D3B1 /* SceneDelegate.swift */; };
 		858F944D2780C6E200D2D3B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 858F944C2780C6E200D2D3B1 /* Assets.xcassets */; };
@@ -79,6 +81,8 @@
 		82BE2DB9CEFEC150D1C2328B /* Pods-PhotosListTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosListTask.debug.xcconfig"; path = "Target Support Files/Pods-PhotosListTask/Pods-PhotosListTask.debug.xcconfig"; sourceTree = "<group>"; };
 		856A691A28D8C3778BE67023 /* Pods-PhotosListTask-PhotosListTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotosListTask-PhotosListTaskUITests.release.xcconfig"; path = "Target Support Files/Pods-PhotosListTask-PhotosListTaskUITests/Pods-PhotosListTask-PhotosListTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
 		858F3F932783C32D00142F01 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		858F3F962783D14500142F01 /* PersistDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistDataManager.swift; sourceTree = "<group>"; };
+		858F3F982783D18E00142F01 /* RealmPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPhoto.swift; sourceTree = "<group>"; };
 		858F943D2780C6E000D2D3B1 /* PhotosListTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosListTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		858F94402780C6E000D2D3B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		858F94422780C6E000D2D3B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +192,14 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		858F3F9A2783D1A600142F01 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				858F3F982783D18E00142F01 /* RealmPhoto.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		858F94342780C6E000D2D3B1 = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +288,7 @@
 				858F94792780CA6800D2D3B1 /* Observable.swift */,
 				858F947C2780CAB600D2D3B1 /* NetworkConnectionManager.swift */,
 				858F94882780CD0600D2D3B1 /* NavigationManager.swift */,
+				858F3F962783D14500142F01 /* PersistDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -333,6 +346,7 @@
 		858F949B2780CEDB00D2D3B1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				858F3F9A2783D1A600142F01 /* Realm */,
 				858F94B42780DB0700D2D3B1 /* Photo.swift */,
 				858F94C82780EAC400D2D3B1 /* BaseReponse.swift */,
 			);
@@ -713,6 +727,7 @@
 				858F94962780CE7500D2D3B1 /* Dimensions.swift in Sources */,
 				858F94412780C6E000D2D3B1 /* AppDelegate.swift in Sources */,
 				858F94942780CE5D00D2D3B1 /* Constants.swift in Sources */,
+				858F3F972783D14500142F01 /* PersistDataManager.swift in Sources */,
 				858F94B52780DB0700D2D3B1 /* Photo.swift in Sources */,
 				858F948F2780CDD900D2D3B1 /* Storyboarded.swift in Sources */,
 				858F94A12780CF2700D2D3B1 /* BaseAPI.swift in Sources */,
@@ -720,6 +735,7 @@
 				858F94C72780E8AC00D2D3B1 /* PhotosRouter.swift in Sources */,
 				858F949E2780CEFB00D2D3B1 /* NetworkConstants.swift in Sources */,
 				858F94432780C6E000D2D3B1 /* SceneDelegate.swift in Sources */,
+				858F3F992783D18E00142F01 /* RealmPhoto.swift in Sources */,
 				85945BAD2782825800E81E30 /* PhotoDetailsViewModel.swift in Sources */,
 				858F94912780CDFA00D2D3B1 /* Alertable.swift in Sources */,
 				858F94852780CB6200D2D3B1 /* BaseViewModel.swift in Sources */,

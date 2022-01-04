@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DataTypes {
+enum DataTypes: Int {
     case photo
     case ad
 }
@@ -32,5 +32,23 @@ struct Photo: Decodable, Equatable, Encodable {
         self.url = ""
         self.downloadUrl = ""
         self.type = type
+    }
+}
+
+
+extension Photo: Persistable {
+    
+    init(managedObject: RealmPhoto) {
+        id = managedObject.id
+        author = managedObject.author
+        url = managedObject.url
+        downloadUrl = managedObject.downloadUrl
+        type = DataTypes(rawValue: managedObject.type) ?? .photo
+    }
+    
+    func getManagedObject() -> RealmPhoto {
+        let realmPhoto = RealmPhoto()
+        realmPhoto.setPhoto(with: self)
+        return realmPhoto
     }
 }
