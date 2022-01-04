@@ -260,7 +260,6 @@
 				858F948D2780CDC800D2D3B1 /* Protocols */,
 				858F948A2780CD7E00D2D3B1 /* Extensions */,
 				858F947B2780CA9C00D2D3B1 /* Managers */,
-				858F94792780CA6800D2D3B1 /* Observable.swift */,
 			);
 			path = Globals;
 			sourceTree = "<group>";
@@ -277,6 +276,7 @@
 		858F947B2780CA9C00D2D3B1 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				858F94792780CA6800D2D3B1 /* Observable.swift */,
 				858F947C2780CAB600D2D3B1 /* NetworkConnectionManager.swift */,
 				858F94882780CD0600D2D3B1 /* NavigationManager.swift */,
 			);

@@ -33,6 +33,7 @@ class PhotoCell: UITableViewCell {
         self.photoItem = photo
         addImageGesture()
         authorNameLabel.text = photo.author
+        photoImageView.kf.indicatorType = .activity
         let photoImageUrl = URL(string: photo.downloadUrl)
         photoImageView.kf.setImage(with: photoImageUrl)
         self.onPhotoItemSelected = onPhotoItemSelected

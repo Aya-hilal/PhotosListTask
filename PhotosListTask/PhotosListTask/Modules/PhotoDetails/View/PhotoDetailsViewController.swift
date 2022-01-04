@@ -50,6 +50,7 @@ class PhotoDetailsViewController: BaseViewController, Alertable, Storyboarded  {
             return
         }
         authorNameLabel.text = photo.author
+        photoImageView.kf.indicatorType = .activity
         let photoImageUrl = URL(string: photo.downloadUrl)
         photoImageView.kf.setImage(with: photoImageUrl)
         self.view.backgroundColor = photoImageView.image?.getDominantColor()

@@ -14,7 +14,7 @@ class BaseAPI {
         guard NetworkConnectionManager.IS_CONNECTED_TO_INTERNET else {
             NotificationCenter.default.post(
                 name: NSNotification.Name(rawValue: BaseViewModel.networkMessageKey),
-                object: "Global.network_reachability_error"
+                object: "Check your internet connection!"
             )
             completion(nil, APIError.connectionError)
             return
@@ -56,7 +56,6 @@ class BaseAPI {
                     print("error: \(error)")
                 }
             }
-            //
             if apiError == nil {
                 apiError = APIError(responseCode: httpResponse.statusCode)
             }
