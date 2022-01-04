@@ -55,6 +55,7 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     
     private func setupNavigationBar() {
         self.navigationController?.navigationBar.isHidden = true
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     private func setupDataSource() {
@@ -68,7 +69,10 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     }
     
     private func onItemSelected(photo: Photo?) {
-      print("onItemSelected")
+        if photo?.type == .ad {
+            return
+        }
+        NavigationManager.sharedInstance.openPhotoDetails(parentview: self, photo: photo)
     }
     
     private func openImageInFullScreen(image: UIImage) {

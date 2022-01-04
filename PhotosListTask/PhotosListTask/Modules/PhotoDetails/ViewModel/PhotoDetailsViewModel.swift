@@ -9,4 +9,17 @@ import Foundation
 
 class PhotoDetailsViewModel: BaseViewModel {
     
+    init(photo: Photo?) {
+        self.photo = photo
+    }
+    
+    //MARK: - Propertires
+    private var photo: Photo?
+    
+    
+    // MARK: - Methods
+    func getPhoto() -> Photo? {
+        return photo
+    }
+    
 }
