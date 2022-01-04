@@ -7,13 +7,16 @@
 
 import Foundation
 
-class PhotosListViewModel: BaseViewModel, ObservableObject {
+class PhotosListViewModel: BaseViewModel {
+    
+    //MARK: - Propertires
     var photosList: Observable<[Photo]?> = Observable(nil)
     let limit = 10
     private var pageNumber = 1
     private var canFetchMorePhotos: Bool = true
     private var fromPagination: Bool = false
-    
+   
+    // MARK: - Methods
     func getCanFetchMorePhotos() -> Bool {
         return canFetchMorePhotos
     }

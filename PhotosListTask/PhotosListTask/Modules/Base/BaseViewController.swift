@@ -15,9 +15,24 @@ class BaseViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func setDefaultNavigationBar() {
+        navigationController?.navigationBar.isHidden = false
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .clear
+        appearance.shadowColor = .clear
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+        navigationController?.navigationBar.setBackgroundImage(UIImage(),
+                                                               for: UIBarPosition.any,
+                                                               barMetrics: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
     }
     
     func changeActivityIndicatorStatus(show: Bool) {
@@ -29,12 +44,12 @@ class BaseViewController: UIViewController {
             }
             activityView?.style = UIActivityIndicatorView.Style.large
             activityView?.color = .gray
-        //MARK: - Center loader with respect to window not super view
-        let window = UIApplication.shared.keyWindow!
-        activityView?.center =  window.center
-        window.addSubview(activityView!)
-        window.bringSubviewToFront(activityView!)
-        activityView?.startAnimating()
+            //MARK: - Center loader with respect to window not super view
+            let window = UIApplication.shared.keyWindow!
+            activityView?.center =  window.center
+            window.addSubview(activityView!)
+            window.bringSubviewToFront(activityView!)
+            activityView?.startAnimating()
         } else {
             if (activityView != nil){
                 activityView?.stopAnimating()
