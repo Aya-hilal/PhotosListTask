@@ -13,6 +13,7 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     //MARK: - Propertires
     private var viewModel: PhotosListViewModel!
     private var dataSource: PhotosListDataSource!
+    private var refreshControl = UIRefreshControl()
 
     //MARK: - Navigation
     static let storyboardName: String = "PhotosList"
@@ -47,6 +48,18 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     
     // MARK: - Private Methods
     
+    private func setupSwipeToRefresh() {
+        refreshControl.tintColor = UIColor.red
+        refreshControl.addTarget(self, action: #selector(refreshPhotosList), for: .valueChanged)
+        photosTableView.refreshControl = refreshControl
+        photosTableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.size.height)
+    }
+
+    @objc private func refreshPhotosList() {
+        refreshControl.beginRefreshing()
+        fetchPhotosRemotly()
+    }
+    
     private func fetchPhotosRemotly() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.viewModel.startFetchingPhotosList()
@@ -60,6 +73,7 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     
     private func setupDataSource() {
         dataSource = PhotosListDataSource(tableView: photosTableView, viewController: self, onItemSelected: onPhotoItemSelected, onLoadMorePhotos: onLoadMorePhotos, onAllItemSelected: onItemSelected)
+        setupSwipeToRefresh()
     }
     
     private func onPhotoItemSelected(photo: Photo?, image: UIImage?) {
@@ -97,6 +111,7 @@ class PhotosListViewController: BaseViewController, Alertable, Storyboarded  {
     
     private func observeToViewModelChanges() {
         viewModel.photosList.observe(on: self) { photos in
+            self.refreshControl.endRefreshing()
             if photos?.isEmpty ?? true {
                 return
             }
