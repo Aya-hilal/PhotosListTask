@@ -13,7 +13,6 @@
 		858F3F942783C32D00142F01 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F3F932783C32D00142F01 /* UIImage.swift */; };
 		858F94412780C6E000D2D3B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F94402780C6E000D2D3B1 /* AppDelegate.swift */; };
 		858F94432780C6E000D2D3B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F94422780C6E000D2D3B1 /* SceneDelegate.swift */; };
-		858F944B2780C6E000D2D3B1 /* PhotosListTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 858F94492780C6E000D2D3B1 /* PhotosListTask.xcdatamodeld */; };
 		858F944D2780C6E200D2D3B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 858F944C2780C6E200D2D3B1 /* Assets.xcassets */; };
 		858F94502780C6E200D2D3B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 858F944E2780C6E200D2D3B1 /* LaunchScreen.storyboard */; };
 		858F945B2780C6E200D2D3B1 /* PhotosListTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F945A2780C6E200D2D3B1 /* PhotosListTaskTests.swift */; };
@@ -83,7 +82,6 @@
 		858F943D2780C6E000D2D3B1 /* PhotosListTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotosListTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		858F94402780C6E000D2D3B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		858F94422780C6E000D2D3B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		858F944A2780C6E000D2D3B1 /* PhotosListTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PhotosListTask.xcdatamodel; sourceTree = "<group>"; };
 		858F944C2780C6E200D2D3B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		858F944F2780C6E200D2D3B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		858F94512780C6E200D2D3B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -221,7 +219,6 @@
 				858F94782780C97500D2D3B1 /* Resources */,
 				858F94762780C90E00D2D3B1 /* Globals */,
 				858F94732780C89200D2D3B1 /* Application */,
-				858F94492780C6E000D2D3B1 /* PhotosListTask.xcdatamodeld */,
 			);
 			path = PhotosListTask;
 			sourceTree = "<group>";
@@ -736,7 +733,6 @@
 				858F94C92780EAC400D2D3B1 /* BaseReponse.swift in Sources */,
 				858F94872780CB8600D2D3B1 /* BaseNavigationController.swift in Sources */,
 				85945BA127826C6900E81E30 /* AdCell.swift in Sources */,
-				858F944B2780C6E000D2D3B1 /* PhotosListTask.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1098,19 +1094,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		858F94492780C6E000D2D3B1 /* PhotosListTask.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				858F944A2780C6E000D2D3B1 /* PhotosListTask.xcdatamodel */,
-			);
-			currentVersion = 858F944A2780C6E000D2D3B1 /* PhotosListTask.xcdatamodel */;
-			path = PhotosListTask.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 858F94352780C6E000D2D3B1 /* Project object */;
 }
