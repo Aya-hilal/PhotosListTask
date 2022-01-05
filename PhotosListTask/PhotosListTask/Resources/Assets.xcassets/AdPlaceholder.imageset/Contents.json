@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "logo-resized.png",
+      "filename" : "banner-adplaceholder.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "logo-resized-1.png",
+      "filename" : "banner-adplaceholder-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "logo-resized-2.png",
+      "filename" : "banner-adplaceholder-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

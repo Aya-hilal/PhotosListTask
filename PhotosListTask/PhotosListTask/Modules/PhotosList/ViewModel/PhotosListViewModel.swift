@@ -15,7 +15,13 @@ class PhotosListViewModel: BaseViewModel {
     private var pageNumber = 1
     private var canFetchMorePhotos: Bool = true
     private var fromPagination: Bool = false
-   
+    private var photosRepository: PhotosDataSource!
+
+    override init() {
+        photosRepository = PhotosRepository()
+    }
+    
+    
     // MARK: - Methods
     func getCanFetchMorePhotos() -> Bool {
         return canFetchMorePhotos
@@ -37,7 +43,7 @@ class PhotosListViewModel: BaseViewModel {
     }
     
     private func getPhotosList() {
-        PhotosAPI.getPhotosList(pageNumber: pageNumber, limit: limit, completion: { photos, error in
+        photosRepository.getPhotosList(pageNumber: pageNumber, limit: limit, completion: { photos, error in
             if photos?.isEmpty ?? true {
                 self.canFetchMorePhotos = false
             } else {

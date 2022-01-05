@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="oS3-c9-uzD">
-                                <rect key="frame" x="10" y="44" width="394" height="353"/>
+                                <rect key="frame" x="10" y="64" width="394" height="353"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u44-oF-GcJ">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="300"/>
@@ -39,7 +39,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="oS3-c9-uzD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ESv-Id-8ZJ"/>
+                            <constraint firstItem="oS3-c9-uzD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="ESv-Id-8ZJ"/>
                             <constraint firstItem="oS3-c9-uzD" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="gqn-jc-i4R"/>
                             <constraint firstItem="oS3-c9-uzD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="o8r-bp-c1q"/>
                         </constraints>
